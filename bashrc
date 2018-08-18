@@ -92,8 +92,8 @@ alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -ChF'
 alias c='cd ..'
-function cdl { cd $1; ll;}
-alias cd='cdl'
+cs() { cd "$@" && ll; }
+alias cd='cs'
 
 alias v='nvim'
 
