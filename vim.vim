@@ -54,6 +54,7 @@ cmap w!! w !sudo tee % >/dev/null
 
 set history=10000
 nmap <leader>o :NERDTreeToggle<CR>
+nmap <leader>t :term<CR>
 
 "vim-plug
 "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
