@@ -1,5 +1,8 @@
 set nocompatible
 set laststatus=2
+"key mappins
+let mapleader = ","
+nnoremap ; :
 
 set number
 nmap <leader>n :set number!<CR>
@@ -7,10 +10,12 @@ nmap <Space> <PageDown>
 nmap ; :
 map <Tab> 6
 
+nnoremap <leader>r :.w !bash<CR>
+
 set nowrap
 "set path+=**
 
-"set autowrite
+set autowrite
 set scrolloff=10
 
 "set number relativenumber
@@ -42,9 +47,6 @@ set autoindent
 set smartindent
 
 
-"key mappins
-let mapleader = ","
-nnoremap ; :
 
 "nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <leader>v :edit ~/dotfiles/vim.vim<CR>
@@ -56,6 +58,24 @@ set history=10000
 nmap <leader>o :NERDTreeToggle<CR>
 nmap <leader>t :term<CR>
 
+
+"fzf stuff
+
+nmap <Leader>f :GFiles<CR>
+nmap <Leader>F :Files<CR>
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>h :History<CR>
+nmap <Leader>t :BTags<CR>
+nmap <Leader>T :Tags<CR>
+nmap <Leader>l :BLines<CR>
+nmap <Leader>L :Lines<CR>
+nmap <Leader>' :Marks<CR>
+nmap <Leader>C :Commands<CR>
+nmap <Leader>: :History:<CR>
+nmap <Leader>/ :History/<CR>
+
+
+set rtp+=~/.fzf
 "vim-plug
 "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -72,6 +92,10 @@ Plug 'nelsyeung/twig.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
+"Plug '~/.fzf'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+"Plug 'othree/xml.vim'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
